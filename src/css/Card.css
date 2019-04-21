@@ -1,0 +1,28 @@
+.Card{
+  position: relative;
+}
+
+.pic {
+  margin: 5px;
+  border: pink solid;
+  border-radius: 50px;
+  color: gray;
+  height: 80vh;
+  z-index: 99;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.info {
+  position: absolute;
+  bottom: 40px;
+  left: 37%;
+  font-size: 25px;
+  color: white;
+  z-index: 900;
+}

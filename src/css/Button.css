@@ -1,0 +1,22 @@
+.Button {
+  text-align: center;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border: 1px solid;
+  border-radius: 20px;
+  background: white;
+}
+
+.button:hover {
+  background: gray;
+  opacity: 0.3;
+}
+
+.button:active {
+  background: snow;
+  opacity: 0.8;
+}
