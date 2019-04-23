@@ -1,19 +1,48 @@
 .App {
-  text-align: center;
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
+  text-align: center;
 }
 
 .container {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-stack {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  z-index: 10;
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  z-index: 100;
+}
+
+.swipe-like {
+  transform: translateX(500px) rotateZ(40deg) scale(0.8);
+  transition: 0.7s;
+  opacity: 0;
+}
+
+.swipe-nope {
+  transform: translateX(-500px) rotate(-30deg) scale(0.8);
+  transition: 0.7s;
+  opacity: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: 95vh;
+  }
 }

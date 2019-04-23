@@ -6,15 +6,25 @@ class Card extends Component {
     const {
       picture,
       name,
-      age
+      age,
+      zindex,
+      classname
     } = this.props;
 
+    let styles = {
+      zIndex: zindex,
+    };
+
+    let classNames = 'Card'.concat(' ', classname);
+
     return (
-      <div className="Card">
-        <img className="pic" src={picture} alt="girl" />
-        <div className="info-container info">
-          <div className="name">{name}</div>
-          <div className="age">{age}</div>
+      <div className={classNames} style={styles}>
+        <div className="contents">
+          <img className="pic" src={picture} alt="girl"/>
+          <div className="info-container info">
+            <div className="name">{name}</div>
+            <div className="age">{age}</div>
+          </div>
         </div>
       </div>
     );

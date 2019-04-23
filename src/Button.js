@@ -2,23 +2,12 @@ import React, { Component } from 'react';
 import './css/Button.css';
 
 class Button extends Component {
-  constructor(props) {
-    super(props);
-    this.buttonClick = this.buttonClick.bind(this);
-  }
-
-  buttonClick = (label) => {
-    if(label === '×') {
-      console.log('Nope');
-    } else if(label === '♥') {
-      console.log('Like');
-    }
-  }
-
   render() {
     const {
       label,
-      color
+      color,
+      onclick,
+      animeEnd
     } = this.props;
 
     let styles = {
@@ -27,7 +16,15 @@ class Button extends Component {
 
     return (
       <div className="Button">
-        <div className="button" onClick={() => this.buttonClick(label)} style={styles}>{label}</div>
+        <div
+          className="button"
+          onClick={onclick}
+          onMouseOver={animeEnd}
+          onContextMenu={animeEnd}
+          onTouchEnd={animeEnd}
+          style={styles}>
+            {label}
+        </div>
       </div>
     );
   }
