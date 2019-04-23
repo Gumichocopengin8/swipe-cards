@@ -91,8 +91,10 @@ class App extends Component {
   }
 
   animationEnd = () => {
-    this.setState({isLike: false});
-    this.setState({isNope: false});
+    setTimeout(function() {
+      this.setState({isLike: false});
+      this.setState({isNope: false});
+    }.bind(this), 200)
     this.card1 = this.card2;
     this.card2 = this.girls.shift();
     this.girls.push(this.card1);

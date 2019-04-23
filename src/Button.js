@@ -18,9 +18,9 @@ class Button extends Component {
       <div className="Button">
         <div
           className="button"
-          onClick={onclick}
-          onMouseOver={animeEnd}
-          onContextMenu={animeEnd}
+          onMouseDown={onclick}
+          onMouseUp={animeEnd}
+          onTouchStart={onclick}
           onTouchEnd={animeEnd}
           style={styles}>
             {label}
