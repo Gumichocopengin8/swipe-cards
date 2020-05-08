@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
-import Card from './Card'
-import Button from './Button'
-import './css/App.css'
+import React, { Component } from 'react';
+import Card from './components/Card';
+import Button from './components/Button';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isLike: false,
       isNope: false,
       girls: [],
       card1: [],
       card2: [],
-    }
+    };
 
     this.girls = [
       {
@@ -78,59 +77,59 @@ class App extends Component {
         name: 'Julia',
         age: '22',
       },
-    ]
+    ];
 
-    this.card1 = this.girls.shift()
-    this.card2 = this.girls.shift()
-    this.animationEnd = this.animationEnd.bind(this)
+    this.card1 = this.girls.shift();
+    this.card2 = this.girls.shift();
+    this.animationEnd = this.animationEnd.bind(this);
   }
 
   clickLike = () => {
-    this.setState({ isLike: true })
-  }
+    this.setState({ isLike: true });
+  };
 
   clickNope = () => {
-    this.setState({ isNope: true })
-  }
+    this.setState({ isNope: true });
+  };
 
   animationEnd = () => {
     setTimeout(
-      function() {
-        this.setState({ isLike: false })
-        this.setState({ isNope: false })
+      function () {
+        this.setState({ isLike: false });
+        this.setState({ isNope: false });
       }.bind(this),
       200
-    )
-    this.card1 = this.card2
-    this.card2 = this.girls.shift()
-    this.girls.push(this.card1)
-  }
+    );
+    this.card1 = this.card2;
+    this.card2 = this.girls.shift();
+    this.girls.push(this.card1);
+  };
 
   render() {
-    console.log(this.state.isLike)
-    console.log(this.state.isNope)
+    console.log(this.state.isLike);
+    console.log(this.state.isNope);
 
     return (
-      <div className='App'>
-        <div className='container'>
-          <div className='card-stack'>
+      <div className="App">
+        <div className="container">
+          <div className="card-stack">
             <Card
               picture={this.card1.picture}
               name={this.card1.name}
               age={this.card1.age}
-              zindex='10'
+              zindex="10"
               classname={this.state.isLike ? 'swipe-like' : this.state.isNope ? 'swipe-nope' : ''}
             />
-            <Card picture={this.card2.picture} name={this.card2.name} age={this.card2.age} zindex='5' />
+            <Card picture={this.card2.picture} name={this.card2.name} age={this.card2.age} zindex="5" />
           </div>
-          <div className='button-container'>
-            <Button label='×' color='red' onclick={this.clickNope} animeEnd={this.animationEnd} />
-            <Button label='♥' color='skyblue' onclick={this.clickLike} animeEnd={this.animationEnd} />
+          <div className="button-container">
+            <Button label="×" color="red" onclick={this.clickNope} animeEnd={this.animationEnd} />
+            <Button label="♥" color="skyblue" onclick={this.clickLike} animeEnd={this.animationEnd} />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
