@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { IconButton } from '@material-ui/core';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ClearIcon from '@material-ui/icons/Clear';
+import ItemCard from 'components/ItemCard';
+import { Girl } from 'components/interface/';
 
 const Index = (): JSX.Element => {
-  const girls = [
+  const girlsData: Girl[] = [
     {
       key: 0,
       picture: 'https://image.freepik.com/free-photo/beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg',
@@ -67,11 +73,45 @@ const Index = (): JSX.Element => {
     },
   ];
 
+  const [like, setLike] = useState<boolean>(false);
+  const [nope, setNope] = useState<boolean>(false);
+  const [girls, setGirls] = useState<Girl[]>(girlsData);
+
+  const onLike = () => setLike(true);
+  const onNope = () => setNope(true);
+  const animationEnd = () => {
+    setTimeout(() => {
+      setLike(false);
+      setNope(false);
+      girls.shift();
+      setGirls(girls);
+    }, 200);
+  };
+
   return (
-    <div>
-      <div>hello</div>
-    </div>
+    <Container>
+      <div>
+        <ItemCard girl={girls[0]} isLike={like} isNope={nope} />
+      </div>
+      <div>
+        <IconButton onMouseDown={onNope} onMouseUp={animationEnd} onTouchStart={onNope} onTouchEnd={animationEnd}>
+          <ClearIcon />
+        </IconButton>
+        <IconButton onMouseDown={onLike} onMouseUp={animationEnd} onTouchStart={onLike} onTouchEnd={animationEnd}>
+          <FavoriteIcon />
+        </IconButton>
+      </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default Index;

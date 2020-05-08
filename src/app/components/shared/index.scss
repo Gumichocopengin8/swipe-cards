@@ -1,7 +1,11 @@
-@import './button.scss';
+.swipe-like {
+  transform: translateX(500px) rotateZ(40deg) scale(0.8);
+  transition: 0.7s;
+  opacity: 0;
+}
 
 .swipe-nope {
-  transform: translateX(-500px) rotate(-30deg) scale(0.8);
+  transform: translateX(-500px) rotate(-40deg) scale(0.8);
   transition: 0.7s;
   opacity: 0;
 }
