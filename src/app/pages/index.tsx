@@ -83,35 +83,44 @@ const Index = (): JSX.Element => {
     setTimeout(() => {
       setLike(false);
       setNope(false);
-      girls.shift();
-      setGirls(girls);
-    }, 200);
+    }, 300);
+    girls.shift();
+    setGirls(girls);
   };
 
   return (
     <Container>
-      <div>
+      <div style={{ marginBottom: '50px;' }}>
         <ItemCard girl={girls[0]} isLike={like} isNope={nope} />
       </div>
-      <div>
+      <Buttons>
         <IconButton onMouseDown={onNope} onMouseUp={animationEnd} onTouchStart={onNope} onTouchEnd={animationEnd}>
           <ClearIcon />
         </IconButton>
         <IconButton onMouseDown={onLike} onMouseUp={animationEnd} onTouchStart={onLike} onTouchEnd={animationEnd}>
           <FavoriteIcon />
         </IconButton>
-      </div>
+      </Buttons>
     </Container>
   );
 };
 
 const Container = styled.div`
-  width: 90vw;
   height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const Buttons = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
 `;
 
 export default Index;
