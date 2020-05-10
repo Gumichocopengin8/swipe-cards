@@ -10,6 +10,8 @@
 
 # production
 /build
+/dist
+/src/app/.next/cache
 
 # misc
 .DS_Store
