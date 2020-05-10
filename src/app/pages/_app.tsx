@@ -1,6 +1,5 @@
 import React from 'react';
 import App from 'next/app';
-import 'components/shared/index.scss';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
