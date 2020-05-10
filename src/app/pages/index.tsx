@@ -116,10 +116,10 @@ const Index = (): JSX.Element => {
         )}
       </div>
       <Buttons>
-        <IconButton onMouseDown={onNope} onMouseUp={cardSwipe}>
+        <IconButton color="primary" onMouseDown={onNope} onMouseUp={cardSwipe}>
           <ClearIcon />
         </IconButton>
-        <IconButton onMouseDown={onLike} onMouseUp={cardSwipe}>
+        <IconButton color="secondary" onMouseDown={onLike} onMouseUp={cardSwipe}>
           <FavoriteIcon />
         </IconButton>
       </Buttons>
