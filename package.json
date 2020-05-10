@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next ./src/app",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build ./src/app",
+    "start": "next start ./src/app",
     "lint-app": "eslint './src/**/*.{ts,tsx}'",
     "prettier": "prettier --write"
   },
