@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import styled from 'styled-components';
 import { Card, CardContent, CardMedia, CardActions, Collapse, Slide } from '@material-ui/core';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
@@ -16,6 +16,12 @@ const ItemCard = ({ girl, isLike, isNope, topCardKey, zIndex }: Props): JSX.Elem
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const onExpandClick = () => setExpanded(!expanded);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setExpanded(false);
+    }, 200);
+  }, [isLike, isNope]);
 
   const actionAnime = useMemo(() => {
     if (topCardKey === girl.key) {
