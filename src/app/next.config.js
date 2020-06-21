@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = {
   distDir: '../../build/next',
+  target: 'serverless',
 
   webpack(config, options) {
     config.plugins = config.plugins || [];

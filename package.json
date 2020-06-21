@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next ./src/app",
     "build": "next build ./src/app",
+    "now-build": "next build ./src/app",
     "start": "next start ./src/app -p $PORT",
     "lint-app": "eslint './src/**/*.{ts,tsx}'",
     "prettier": "prettier --write"
