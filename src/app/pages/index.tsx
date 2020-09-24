@@ -13,8 +13,8 @@ const Index = (): JSX.Element => {
       picture: 'https://image.freepik.com/free-photo/beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg',
       name: 'Sarah',
       age: '18',
-      description: `Hello, I am from California. 
-      Lets hang out. 
+      description: `Hello, I am from California.
+      Lets hang out.
       I am looking for somehting casual.`,
     },
     {
@@ -49,8 +49,7 @@ const Index = (): JSX.Element => {
     },
     {
       key: 5,
-      picture:
-        'http://3.bp.blogspot.com/-75xAd3IEA34/U7S3580MDbI/AAAAAAAABlo/E4ESkscWI74/s1600/641x750xcute-australia-fans-girls-on-world-cup-2014_1400467729.jpg.pagespeed.ic.idUr3HxG63%5B1%5D.jpg',
+      picture: 'https://i.redd.it/bnst1z1cvlh51.jpg',
       name: 'Eliza',
       age: '25',
       description: `Im lost. Im looking for your number.`,
