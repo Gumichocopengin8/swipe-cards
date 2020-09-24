@@ -1,17 +1,17 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  render() {
+  render(): JSX.Element {
     return (
-      <html>
+      <Html>
         <Head>
-          <style>{`body { 
+          <style>{`body {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
