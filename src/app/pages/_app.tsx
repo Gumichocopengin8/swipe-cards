@@ -1,24 +1,21 @@
-import React from 'react';
-import App from 'next/app';
+import React, { useEffect } from 'react';
+import { AppProps } from 'next/app';
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+const MyApp = (props: AppProps): JSX.Element => {
+  const { Component, pageProps } = props;
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
     }
+  }, []);
 
-    return { pageProps };
-  }
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  );
+};
 
-  render() {
-    const { Component, pageProps } = this.props;
-
-    return (
-      <>
-        <Component {...pageProps} />
-      </>
-    );
-  }
-}
+export default MyApp;
