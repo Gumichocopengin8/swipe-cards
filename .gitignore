@@ -12,6 +12,10 @@
 /build
 /dist
 /src/app/.next/cache
+/out
+
+# firebase
+/.firebase
 
 # misc
 .DS_Store

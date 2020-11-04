@@ -6,6 +6,7 @@
     "dev": "next ./src/app",
     "build": "next build ./src/app",
     "start": "next start ./src/app -p $PORT",
+    "export": "next export ./src/app -o ./out",
     "lint-app": "eslint './src/**/*.{ts,tsx}'",
     "prettier": "prettier --write"
   },
